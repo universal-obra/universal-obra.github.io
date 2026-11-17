@@ -122,6 +122,18 @@
     .price-big { font-family: "Cormorant Garamond", serif; font-size: 44px; font-weight: 600; margin-bottom: 18px; }
     .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
 
+    button.btn { border: 0; cursor: pointer; font-family: inherit; }
+    .transfer {
+      margin-top: 18px; padding: 22px 24px;
+      background: var(--bg-2); border: 1px solid var(--accent-strong); border-radius: 14px;
+    }
+    .transfer-title { font-size: 12px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+    .transfer dl { display: grid; grid-template-columns: auto 1fr; gap: 8px 18px; font-size: 15px; }
+    .transfer dt { color: var(--muted); }
+    .transfer dd { color: var(--ink); font-weight: 400; word-break: break-word; }
+    .transfer dd a { color: var(--ink); }
+    .transfer .copy { margin-top: 18px; border: 1px solid var(--line); }
+
     /* ---------- FOOTER ---------- */
     footer {
       border-top: 1px solid var(--line);
@@ -264,10 +276,20 @@
           <p>Buscamos personas, empresas y marcas que compartan nuestra visión y quieran apoyar propuestas artísticas que conectan arte, tecnología, naturaleza y espiritualidad, generando nuevas experiencias y formas de encuentro con el público.</p>
           <p>Ser parte de UNIVERSAL es contribuir a que el arte chileno trascienda fronteras, dialogue con nuevas culturas y abra espacios para imaginar otras formas de habitar y comprender nuestro planeta.</p>
           <div class="actions">
-            <!-- 🔗 LINK 5 (opcional): link de monto libre o datos de transferencia. Si no lo usas, borra esta línea -->
-            <a class="btn accent" href="LINK_APORTE_LIBRE" target="_blank" rel="noopener">Hacer un aporte</a>
+            <button type="button" class="btn accent" id="btn-aporte" aria-expanded="false" aria-controls="datos-aporte">Hacer un aporte</button>
             <!-- ✉️ CORREO de contacto para marcas y colaboraciones -->
-            <a class="btn ghost" href="mailto:CORREO@EJEMPLO.COM?subject=Colaboraci%C3%B3n%20UNIVERSAL">Quiero colaborar</a>
+            <a class="btn ghost" href="mailto:expouniversal.art@gmail.com?subject=Colaboraci%C3%B3n%20UNIVERSAL">Quiero colaborar</a>
+          </div>
+          <div class="transfer" id="datos-aporte" hidden>
+            <p class="transfer-title">Datos para transferencia</p>
+            <dl>
+              <dt>Banco</dt><dd>Banco Falabella</dd>
+              <dt>Nombre</dt><dd>Paula Garrido Miranda</dd>
+              <dt>RUT</dt><dd>15.384.795-9</dd>
+              <dt>Cuenta</dt><dd>Cuenta corriente 19814436643</dd>
+              <dt>Correo</dt><dd><a href="mailto:expouniversal.art@gmail.com">expouniversal.art@gmail.com</a></dd>
+            </dl>
+            <button type="button" class="btn ghost copy" id="btn-copiar">Copiar datos</button>
           </div>
         </div>
         <div class="media">
@@ -285,5 +307,27 @@
     </div>
   </footer>
 
+  <script>
+    (function () {
+      var btn = document.getElementById('btn-aporte');
+      var panel = document.getElementById('datos-aporte');
+      var copy = document.getElementById('btn-copiar');
+      btn.addEventListener('click', function () {
+        var open = panel.hidden;
+        panel.hidden = !open;
+        btn.setAttribute('aria-expanded', String(open));
+        btn.textContent = open ? 'Ocultar datos' : 'Hacer un aporte';
+      });
+      copy.addEventListener('click', function () {
+        var text = 'Banco Falabella\nPaula Garrido Miranda\nRUT 15.384.795-9\nCuenta corriente 19814436643\nexpouniversal.art@gmail.com';
+        try {
+          navigator.clipboard.writeText(text).then(function () {
+            copy.textContent = '¡Copiado!';
+            setTimeout(function () { copy.textContent = 'Copiar datos'; }, 2000);
+          });
+        } catch (e) {}
+      });
+    })();
+  </script>
 </body>
 </html>
