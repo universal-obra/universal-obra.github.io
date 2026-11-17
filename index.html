@@ -10,14 +10,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0f0e0c;
-      --bg-2: #171512;
-      --card: #1d1a16;
-      --ink: #f1ece4;
-      --muted: #a89f93;
-      --line: #2e2a24;
-      --accent: #d9a35b;      /* mineral / cobre */
-      --accent-ink: #15120e;
+      --bg: #07081a;
+      --bg-2: #0c0e26;
+      --card: #11143a;
+      --ink: #f5f6ff;
+      --muted: #9ea3d1;
+      --line: #262a5e;
+      --accent: #7c7cff;      /* azul (texto) */
+      --accent-strong: #2f22ff; /* azul (botones) */
+      --accent-ink: #ffffff;
       --radius: 16px;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -53,7 +54,8 @@
     .pill {
       text-decoration: none; color: var(--ink);
       border: 1px solid var(--line); border-radius: 999px;
-      padding: 9px 18px; font-size: 14px; font-weight: 400;
+      padding: 10px 18px; font-size: 12px; font-weight: 500;
+      letter-spacing: .18em; text-transform: uppercase;
       transition: border-color .2s, color .2s;
     }
     .pill:hover { border-color: var(--accent); color: var(--accent); }
@@ -61,7 +63,7 @@
     /* ---------- SECCIONES ---------- */
     section.block { padding: 72px 0; border-top: 1px solid var(--line); }
     section.block h2 { font-size: clamp(34px, 5vw, 50px); margin: 12px 0 22px; }
-    .prose p { margin-bottom: 18px; color: #d6cfc4; font-size: 17px; }
+    .prose p { margin-bottom: 18px; color: #d5d8f2; font-size: 17px; }
     .prose p:last-child { margin-bottom: 0; }
 
     .split { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
@@ -75,7 +77,7 @@
     .hero-img {
       margin-top: 56px; border-radius: var(--radius); overflow: hidden;
       border: 1px solid var(--line);
-      box-shadow: 0 30px 80px -30px rgba(120, 90, 255, .35);
+      box-shadow: 0 30px 80px -30px rgba(47, 34, 255, .45);
     }
     .hero-img img { width: 100%; height: auto; }
 
@@ -100,7 +102,7 @@
       background: var(--ink); color: var(--bg);
       transition: transform .15s ease, background .15s ease;
     }
-    .btn.accent { background: var(--accent); color: var(--accent-ink); }
+    .btn.accent { background: var(--accent-strong); color: var(--accent-ink); }
     .btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
     .btn:hover { transform: translateY(-2px); }
     .btn:focus-visible, .pill:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
@@ -149,9 +151,9 @@
       <h1>UNIVERSAL</h1>
       <p class="sub">Una obra de <strong>Paula Garrido</strong> · Centro de Cultura Digital, Ciudad de México · Enero y febrero 2027</p>
       <nav>
-        <a class="pill" href="#prints">Prints</a>
-        <a class="pill" href="#encuentro">Encuentro especial</a>
-        <a class="pill" href="#aportes">Aportes y colaboraciones</a>
+        <a class="pill" href="#prints">Print</a>
+        <a class="pill" href="#encuentro">Experiencia inmersiva</a>
+        <a class="pill" href="#aportes">Aportes &amp; colaboraciones</a>
       </nav>
       <div class="hero-img">
         <img src="img/portal.jpg" alt="Portal UNIVERSAL: las obras Andes, Pacífico y Mineral en un espacio inmersivo" width="1600" height="860">
@@ -164,22 +166,18 @@
     <div class="wrap about">
       <div class="prose">
       <span class="eyebrow">La obra</span>
-      <h2>Un viaje a lo más profundo de nuestra naturaleza</h2>
+      <h2>Un viaje a lo más profundo de nuestra naturaleza y ancestralidad</h2>
       <p>UNIVERSAL es el resultado de dos décadas de investigación y trabajo, en el que la artista visual Paula Garrido (Chile, 1983) documenta e interpreta paisajes del Chile profundo. Andes, Pacífico y Mineral son tres obras de gran formato que componen la gran obra, invitándonos a vivir un viaje a lo más profundo de nuestra naturaleza ancestral y ser, revelando la inmensidad y belleza de un país y un planeta que creemos conocer.</p>
       <p>UNIVERSAL funciona como un catastro visual y sonoro del patrimonio natural chileno, dejándonos entrever que lo digital no se opone a lo humano, a lo vivo, a la espiritualidad, sino que se articula para amplificar lo que la imagen fija no logra transmitir. La interacción entre lo textil, lo sonoro y lo lumínico se propone como un archivo vivo, un registro de lo que aún existe y debemos preservar.</p>
       <p>Esta obra ritual inmersiva se expondrá en el Centro de Cultura Digital, en Ciudad de México (enero y febrero de 2027), para representar a Chile y así mostrar al mundo el poder y el valor latente de nuestro territorio, ancestralidad y continente.</p>
       <p>Esta campaña autogestionada es un llamado para que apoyes a Paula y su equipo en esta última parte del proceso: ir a México a representar a Chile con esta tremenda obra, que busca ser una experiencia significativa e inolvidable para todas las personas que sean parte.</p>
       <p>Tenemos varias opciones con las que puedes colaborar y apoyar, todas hechas con mucho amor y gratitud, para que puedas quedarte con algo especial y reconocer el amor que Paula siente por su arte.</p>
-      <p>Cree, apoya y comparte este portal tecno creativo que está próximo a iniciar un viaje, para que el mundo conozca el valor inmensurable de esta larga y angosta franja de tierra llamada Chile.</p>
+      <p>Cree, apoya y comparte este portal tecno espiritual que está próximo a iniciar un viaje, para que el mundo conozca el valor inmensurable de esta larga y angosta franja de tierra llamada Chile.</p>
       </div>
       <div class="side">
         <figure class="media">
           <img src="img/paula.jpg" alt="Retrato de la artista Paula Garrido" loading="lazy">
           <figcaption>Paula Garrido, artista visual (Chile, 1983)</figcaption>
-        </figure>
-        <figure class="media">
-          <img src="img/taller.jpg" alt="Paula Garrido trabajando en serigrafía en su taller" loading="lazy">
-          <figcaption>En el taller, Providencia</figcaption>
         </figure>
       </div>
     </div>
@@ -192,10 +190,10 @@
         <div class="prose">
           <span class="eyebrow">Recompensa</span>
           <h2>Print UNIVERSAL</h2>
-          <p>Recibirás un print del Portal UNIVERSAL, compuesto por tres obras inspiradas en el poderoso patrimonio natural de nuestro país: <strong>ANDES</strong>, la cordillera; <strong>PACÍFICO</strong>, el océano; y <strong>MINERAL</strong>, el desierto. Una composición que no solo representa, sino que lo expone como un ente vivo, con una fuerza única y propia.</p>
+          <p>Recibirás un print del <strong>PORTAL UNIVERSAL</strong>, compuesto por tres obras inspiradas en el poderoso patrimonio natural de nuestro país: <strong>ANDES</strong>, la cordillera; <strong>PACÍFICO</strong>, el océano; y <strong>MINERAL</strong>, el desierto. Una composición que representa el gran Portal y Canal de lo más profundo del ser, como un ente vivo, único y lleno de fuerza de lo más profundo de nuestra tierra.</p>
         </div>
         <div class="media">
-          <img src="img/mineral.jpg" alt="MINERAL, una de las tres obras del Portal UNIVERSAL" loading="lazy">
+          <img src="img/print.jpg" alt="Print del Portal UNIVERSAL: Andes, Pacífico y Mineral" loading="lazy">
         </div>
       </div>
 
@@ -205,21 +203,21 @@
           <span class="size">20 × 20 cm</span>
           <p class="price">$27.500</p>
           <!-- 🔗 LINK 1: Mercado Pago $27.500 -->
-          <a class="btn" href="LINK_PRINT_20" target="_blank" rel="noopener">Aportar $27.500</a>
+          <a class="btn" href="https://mpago.li/1VnJuk5" target="_blank" rel="noopener">Aportar $27.500</a>
         </div>
         <div class="tier featured">
           <span class="label">Print</span>
           <span class="size">40 × 40 cm</span>
           <p class="price">$65.500</p>
           <!-- 🔗 LINK 2: Mercado Pago $65.500 -->
-          <a class="btn accent" href="LINK_PRINT_40" target="_blank" rel="noopener">Aportar $65.500</a>
+          <a class="btn accent" href="https://mpago.li/11moa6p" target="_blank" rel="noopener">Aportar $65.500</a>
         </div>
         <div class="tier">
           <span class="label">Print</span>
           <span class="size">60 × 60 cm</span>
           <p class="price">$95.000</p>
           <!-- 🔗 LINK 3: Mercado Pago $95.000 -->
-          <a class="btn" href="LINK_PRINT_60" target="_blank" rel="noopener">Aportar $95.000</a>
+          <a class="btn" href="https://mpago.li/2pGjc7G" target="_blank" rel="noopener">Aportar $95.000</a>
         </div>
       </div>
 
@@ -232,11 +230,11 @@
     <div class="wrap">
       <div class="split reverse">
         <div class="media">
-          <img src="img/encuentro.jpg" alt="Público frente a la obra inmersiva de Paula Garrido" loading="lazy">
+          <img src="img/mineral.jpg" alt="MINERAL, obra inmersiva de Paula Garrido" loading="lazy">
         </div>
         <div class="prose">
           <span class="eyebrow">Avant première</span>
-          <h2>Encuentro especial en torno a MINERAL</h2>
+          <h2>Experiencia inmersiva “MINERAL”</h2>
           <p>Te invitamos a ser parte de un encuentro único y especial en torno a MINERAL, obra inmersiva de gran formato que se presenta por primera vez en Chile. Esta experiencia nos invita a atravesar un portal tecno-espiritual para adentrarnos en la inmensidad, la belleza y la extrañeza de un planeta que creemos conocer, pero que aún guarda infinitos misterios por revelar.</p>
           <p>La jornada será una celebración de los sentidos y un espacio para compartir en torno al arte, la naturaleza y la conexión con nuestro entorno. Disfrutaremos de una propuesta gastronómica especialmente concebida para dialogar con las dimensiones de la obra, a través de sabores, colores y nutrientes; música en vivo y una edición especial de arte impreso inspirada en el desierto de Atacama y nuestro patrimonio mineral ancestral.</p>
           <ul class="facts">
@@ -273,7 +271,7 @@
           </div>
         </div>
         <div class="media">
-          <img src="img/publico.jpg" alt="Personas viviendo la experiencia inmersiva de UNIVERSAL" loading="lazy">
+          <img src="img/encuentro.jpg" alt="Público frente a la obra inmersiva de Paula Garrido" loading="lazy">
         </div>
       </div>
     </div>
@@ -283,7 +281,7 @@
   <footer>
     <div class="wrap">
       <p class="secure">🔒 Los pagos se procesan de forma segura en Mercado Pago. Puedes pagar con tarjeta sin crear cuenta.</p>
-      <p>Los aportes los recibe Paula Garrido. ¿Dudas? Escribe a <a href="mailto:expouniversal.art@gmail.com">expouniversal.art@gmail.com</a></p>
+      <p>Los aportes los recibe Paula Garrido. ¿Dudas? Escribe a <a href="mailto:CORREO@EJEMPLO.COM">CORREO@EJEMPLO.COM</a></p>
     </div>
   </footer>
 
